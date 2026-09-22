@@ -7,15 +7,17 @@
 
 // ---------------------------------------------------------------
 // MantaWrangler Studios — dark palette override for jekyll-theme-cayman
+// Banner hidden; the markdown H1 is the page title.
 // ---------------------------------------------------------------
 
-$mw-bg:        #17191C;
-$mw-raised:    #1E2126;
-$mw-line:      #2B2F36;
-$mw-text:      #D6DAE0;
-$mw-dim:       #8B929C;
-$mw-accent:    #4FC9E3;
-$mw-white:     #FFFFFF;
+$mw-bg:      #17191C;   // page background
+$mw-well:    #0F1114;   // code blocks — sunken, darker than the page
+$mw-raised:  #22262C;   // table headers — clearly lighter than the page
+$mw-line:    #333942;   // borders, bright enough to actually read
+$mw-text:    #D6DAE0;
+$mw-dim:     #8B929C;
+$mw-accent:  #4FC9E3;
+$mw-white:   #FFFFFF;
 
 body {
   background-color: $mw-bg;
@@ -24,44 +26,39 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-// Header banner -------------------------------------------------
+// Cayman's banner, removed --------------------------------------
 
-.page-header {
-  //background-color: $mw-raised;
-  //background-image: none;
-  //border-bottom: 1px solid $mw-line;
-  //color: $mw-text;
-  display: none;
-}
-
-.project-name {
-  color: $mw-white;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.project-tagline {
-  color: $mw-dim;
-  opacity: 1;
-  font-weight: 400;
-}
+.page-header { display: none; }
 
 // Body ----------------------------------------------------------
 
 .main-content {
   color: $mw-text;
+  padding-top: 2.5rem;
 
   h1, h2, h3, h4, h5, h6 {
-    color: $mw-white;
     font-weight: 700;
     letter-spacing: -0.01em;
   }
 
+  // The markdown H1 now carries the page title
+  h1 {
+    color: $mw-white;
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+
+    &:first-child { margin-top: 0; }
+  }
+
+  // Section headings carry the accent
   h2 {
+    color: $mw-accent;
     border-bottom: 1px solid $mw-line;
     padding-bottom: 0.3em;
     margin-top: 2em;
   }
+
+  h3, h4, h5, h6 { color: $mw-white; }
 
   strong { color: $mw-white; }
 
@@ -71,26 +68,29 @@ body {
     &:hover { text-decoration: underline; }
   }
 
-  // Inline code
+  // Inline code — neutral, so it doesn't compete with the accent headings
   code {
-    background-color: $mw-raised;
+    background-color: $mw-well;
     border: 1px solid $mw-line;
     border-radius: 3px;
-    color: $mw-accent;
+    color: #E6EAF0;
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.85em;
     padding: 0.15em 0.4em;
   }
 
-  // Code blocks
+  // Code blocks — sunken well with a border you can see
+  .highlight { background: none; }
+
   pre {
-    background-color: $mw-raised;
+    background-color: $mw-well;
     border: 1px solid $mw-line;
-    border-radius: 4px;
+    border-radius: 6px;
     color: $mw-text;
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.85em;
     line-height: 1.55;
+    padding: 1rem 1.1rem;
 
     > code {
       background: none;
@@ -99,9 +99,22 @@ body {
       font-size: inherit;
       padding: 0;
     }
-  }
 
-  .highlight pre { background-color: $mw-raised; }
+    // Stop the overflow bar rendering as light-mode chrome
+    scrollbar-width: thin;
+    scrollbar-color: #3B424C $mw-well;
+
+    &::-webkit-scrollbar { height: 10px; }
+    &::-webkit-scrollbar-track {
+      background: $mw-well;
+      border-radius: 0 0 6px 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #3B424C;
+      border-radius: 5px;
+      &:hover { background: #4C545F; }
+    }
+  }
 
   blockquote {
     color: $mw-dim;
@@ -125,7 +138,7 @@ body {
     }
 
     td { background-color: transparent; }
-    tr:nth-child(even) td { background-color: rgba(255, 255, 255, 0.02); }
+    tr:nth-child(even) td { background-color: rgba(255, 255, 255, 0.025); }
   }
 
   hr {
@@ -137,9 +150,7 @@ body {
   }
 
   dl dt { color: $mw-white; }
-
   small { color: $mw-dim; }
-
   img { border-radius: 4px; }
 }
 
@@ -151,8 +162,6 @@ body {
 }
 
 .site-footer-owner,
-.site-footer-credits {
-  color: $mw-dim;
-}
+.site-footer-credits { color: $mw-dim; }
 
 .site-footer a { color: $mw-accent; }
