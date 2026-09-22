@@ -105,8 +105,6 @@ Redirects are rewritten from scratch on every rename, not appended. If you renam
 
 The plugin's own source is permanently excluded. It will not rename, move or delete any of its own files, and those classes do not appear in the class list.
 
----
-
 ## Before you run anything: version control
 
 **READ THIS SECTION. IT IS THE ONE THAT MATTERS MOST.**
@@ -123,8 +121,6 @@ A few specifics worth knowing:
 - **`DefaultEngine.ini` is modified** by a rename. Make sure it is under source control and not locked.
 - **Generated files are deleted** from `Intermediate`. These are build output and shouldn't be in source control, but if your setup tracks them, expect changes.
 - **Run one operation at a time.** Let the rebuild finish and reopen the editor before starting another. Chaining operations without rebuilding in between means the second one runs against a project state that no longer matches its binaries.
-
----
 
 ## Rename flow
 
@@ -154,8 +150,6 @@ What happens next:
 - the target is an `I`-prefixed interface header and the new name drops the `I`;
 - the new name is empty.
 
----
-
 ## Move flow
 
 1. Open **Tools → CPP Refactor Suite**.
@@ -178,8 +172,6 @@ What happens next:
 Generated files are not cleaned up for a move either, because the class name is unchanged, so its Unreal Header Tool output is still valid.
 
 **If a bare include is ambiguous:** if the same filename exists in more than one place in your project the log records a warning naming the file it chose. Check that include after the rebuild.
-
----
 
 ## Delete flow
 
@@ -204,8 +196,6 @@ What happens next:
 That is intentional. Silently rewriting code that depends on a class you just deleted would be guessing at what you meant. Instead the rebuild tells you immediately and precisely what depended on it, in minutes rather than the next time someone opens the project.
 
 The plugin's own classes cannot be deleted.
-
----
 
 ## Getting support
 
@@ -234,8 +224,6 @@ Both are needed. The first shows what happened to your source, the second shows 
 | Documentation | [DOCS URL] |
 
 Support questions are answered in the Discord's support forum. Please open a post there rather than a direct message, so the answer is searchable for the next person with the same problem.
-
----
 
 ## Known limitations
 
