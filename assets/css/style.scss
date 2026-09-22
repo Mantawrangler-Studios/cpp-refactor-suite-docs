@@ -27,10 +27,11 @@ body {
 // Header banner -------------------------------------------------
 
 .page-header {
-  background-color: $mw-raised;
-  background-image: none;
-  border-bottom: 1px solid $mw-line;
-  color: $mw-text;
+  //background-color: $mw-raised;
+  //background-image: none;
+  //border-bottom: 1px solid $mw-line;
+  //color: $mw-text;
+  display: none;
 }
 
 .project-name {
