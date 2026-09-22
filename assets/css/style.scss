@@ -1,12 +1,13 @@
 ---
 ---
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @import "{{ site.theme }}";
 
 // ---------------------------------------------------------------
 // MantaWrangler Studios — dark palette override for jekyll-theme-cayman
+// Headings: Outfit (bold / extrabold).  Body: Montserrat.  Code: JetBrains Mono.
 // Banner hidden; the markdown H1 is the page title.
 // ---------------------------------------------------------------
 
@@ -19,10 +20,16 @@ $mw-dim:     #8B929C;
 $mw-accent:  #4FC9E3;
 $mw-white:   #FFFFFF;
 
+$mw-heading-font: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$mw-body-font:    'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$mw-mono-font:    'JetBrains Mono', ui-monospace, monospace;
+
 body {
   background-color: $mw-bg;
   color: $mw-text;
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: $mw-body-font;
+  font-weight: 400;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -34,33 +41,41 @@ body {
 
 .main-content {
   color: $mw-text;
+  font-family: $mw-body-font;
+  line-height: 1.7;
   padding-top: 2.5rem;
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    font-family: $mw-heading-font;
+    line-height: 1.25;
   }
 
-  // The markdown H1 now carries the page title
+  // The markdown H1 now carries the page title — extrabold
   h1 {
     color: $mw-white;
+    font-weight: 800;
     font-size: 2.2rem;
     letter-spacing: -0.02em;
 
     &:first-child { margin-top: 0; }
   }
 
-  // Section headings carry the accent
+  // Section headings carry the accent — bold
   h2 {
     color: $mw-accent;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     border-bottom: 1px solid $mw-line;
     padding-bottom: 0.3em;
     margin-top: 2em;
   }
 
-  h3, h4, h5, h6 { color: $mw-white; }
+  h3, h4, h5, h6 {
+    color: $mw-white;
+    font-weight: 700;
+  }
 
-  strong { color: $mw-white; }
+  strong { color: $mw-white; font-weight: 700; }
 
   a {
     color: $mw-accent;
@@ -74,8 +89,8 @@ body {
     border: 1px solid $mw-line;
     border-radius: 3px;
     color: #E6EAF0;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.85em;
+    font-family: $mw-mono-font;
+    font-size: 0.82em;
     padding: 0.15em 0.4em;
   }
 
@@ -87,8 +102,8 @@ body {
     border: 1px solid $mw-line;
     border-radius: 6px;
     color: $mw-text;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.85em;
+    font-family: $mw-mono-font;
+    font-size: 0.82em;
     line-height: 1.55;
     padding: 1rem 1.1rem;
 
@@ -120,6 +135,7 @@ body {
     color: $mw-dim;
     border-left: 4px solid $mw-accent;
     padding-left: 1em;
+    font-size: inherit;
   }
 
   table {
@@ -133,7 +149,8 @@ body {
     th {
       background-color: $mw-raised;
       color: $mw-white;
-      font-weight: 500;
+      font-family: $mw-heading-font;
+      font-weight: 700;
       text-align: left;
     }
 
@@ -149,7 +166,7 @@ body {
     margin: 2.5em 0;
   }
 
-  dl dt { color: $mw-white; }
+  dl dt { color: $mw-white; font-family: $mw-heading-font; font-weight: 700; }
   small { color: $mw-dim; }
   img { border-radius: 4px; }
 }
@@ -159,6 +176,7 @@ body {
 .site-footer {
   border-top: 1px solid $mw-line;
   color: $mw-dim;
+  font-family: $mw-body-font;
 }
 
 .site-footer-owner,
