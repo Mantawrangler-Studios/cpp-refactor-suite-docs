@@ -4,8 +4,6 @@ Rename, move and delete C++ classes in Unreal Engine, with the reference sweep, 
 
 **Requirements:** Windows, Unreal Engine 5.6–5.8, a C++ project, and a working Visual Studio toolchain. This is the same setup Unreal already needs to compile C++. Rider and other IDEs are untested and unsupported.
 
----
-
 ## Overview
 
 The plugin adds a **CPP Refactor Suite** entry under the editor's **Tools** menu. The panel lists every class in your project's `Source` folder and offers four actions: find references, rename, move, delete.
