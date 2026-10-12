@@ -217,11 +217,10 @@ Both are needed. The first shows what happened to your source, the second shows 
 
 **Where to go:**
 
-| | |
-|---|---|
-| Bug reports | [ISSUES URL] |
-| Questions and discussion | [DISCORD INVITE URL] |
-| Documentation | [DOCS URL] |
+| |
+|---|
+| [Bug reports](https://forms.clickup.com/9017275340/f/8cqhcyc-4677/K1LAMCRX2XJN1E38JH) |
+| [Discord Questions and Discussion](https://discord.gg/T3xaAfrxnw) |
 
 Support questions are answered in the Discord's support forum. Please open a post there rather than a direct message, so the answer is searchable for the next person with the same problem.
 
