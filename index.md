@@ -218,6 +218,7 @@ Both are needed. The first shows what happened to your source, the second shows 
 **Where to go:**
 
 | |
+|---|
 | [Bug reports](https://forms.clickup.com/9017275340/f/8cqhcyc-4677/K1LAMCRX2XJN1E38JH) |
 | [Discord Questions and Discussion](https://discord.gg/T3xaAfrxnw) |
 
